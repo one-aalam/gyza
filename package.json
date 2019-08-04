@@ -1,6 +1,25 @@
 {
     "private": true,
-    "name": "gyza-react",
-    "workspaces": ["packages/*"],
-    "scripts": {}
- }
+    "name": "gyza",
+    "workspaces": {
+        "packages": [
+            "packages/*"
+        ],
+        "nohoist": [
+            "**/react-native/**",
+            "**/react-native",
+            "**/react-native-scripts",
+            "**/react-native-scripts/**",
+            "**/expo",
+            "**/expo/**"
+        ]
+    },
+    "scripts": {
+        "common": "yarn workspace @gyza/common start",
+        "web": "yarn workspace @gyza/react-web start",
+        "start": "concurrently --kill-others-on-fail 'yarn common'  'yarn web'"
+    },
+    "dependencies": {
+        "concurrently": "^4.1.1"
+    }
+}
