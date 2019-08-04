@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "name": "gyza-react",
+    "workspaces": ["packages/*"],
+    "scripts": {}
+ }
