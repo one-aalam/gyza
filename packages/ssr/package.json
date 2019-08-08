@@ -1,0 +1,21 @@
+{
+  "name": "@gyza/ssr",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@gyza/common": "0.1.0",
+    "babel-plugin-module-resolver": "^3.2.0",
+    "next": "9.0.3",
+    "next-transpile-modules": "^2.3.1",
+    "react": "16.8.3",
+    "react-art": "16.8.6",
+    "react-dom": "16.8.6",
+    "react-native": "0.55.4",
+    "react-native-web": "0.11.0"
+  }
+}

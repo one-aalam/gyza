@@ -1,0 +1,11 @@
+{
+    "private": true,
+    "version": "0.1.0",
+    "name": "@gyza/expo-yarn-workspaces",
+    "main": "index.js",
+    "dependencies": {
+      "debug": "^4.1.0",
+      "find-yarn-workspace-root": "^1.2.0",
+      "mkdirp": "^0.5.1"
+    }
+  }
