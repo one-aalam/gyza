@@ -2,11 +2,11 @@
 import React, { useState } from "react";
 import { Button, StyleSheet, Text, View } from "react-native";
 
-// import {HomeScreen} from './screens/HomeScreen';
+import {HomeScreen} from './screens/HomeScreen';
 
-// export {
-//   HomeScreen
-// };
+export {
+  HomeScreen
+};
 
 export const Counter: React.SFC = () => {
     const [count, setCount] = useState(0);

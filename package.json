@@ -6,6 +6,7 @@
     ],
     "scripts": {
         "build": "yarn workspace @gyza/common build",
+        "common": "yarn workspace @gyza/common watch",
         "web": "yarn workspace @gyza/react-web start",
         "ssr": "yarn workspace @gyza/ssr dev",
         "app": "yarn workspace @gyza/app start",
