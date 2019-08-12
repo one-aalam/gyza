@@ -9,8 +9,6 @@
     "build": "rimraf dist && tsc"
   },
   "dependencies": {
-    "react": "16.8.3",
-    "react-native": "0.59.8",
     "@expo/samples": "~3.0.3",
     "@expo/vector-icons": "^10.0.3",
     "@react-navigation/web": "^1.0.0-alpha.9",
@@ -18,7 +16,10 @@
     "expo-asset": "^6.0.0",
     "expo-constants": "6.0.0",
     "expo-font": "~6.0.0",
-    "expo-web-browser": "6.0.0"
+    "expo-web-browser": "6.0.0",
+    "react": "16.8.3",
+    "react-native": "0.59.8",
+    "styled-components": "^4.3.2"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
@@ -33,7 +34,7 @@
     "jest": "^24.8.0",
     "metro-react-native-babel-preset": "^0.55.0",
     "react-test-renderer": "16.8.6",
-    "typescript": "^3.5.3",
-    "rimraf": "^2.6.3"
+    "rimraf": "^2.6.3",
+    "typescript": "^3.5.3"
   }
 }

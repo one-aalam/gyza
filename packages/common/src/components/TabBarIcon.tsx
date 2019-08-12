@@ -3,7 +3,7 @@ import { Ionicons } from '@expo/vector-icons';
 
 import Colors from '../constants/Colors';
 
-export default function TabBarIcon(props) {
+export const TabBarIcon: React.SFC = (props: any) => {
   return (
     <Ionicons
       name={props.name}
