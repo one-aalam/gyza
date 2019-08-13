@@ -1,5 +1,6 @@
 import { Count } from '@gyza/common';
 import * as serviceWorker from './serviceWorker';
+// import './icons';
 import { AppRegistry } from 'react-native';
 // register the app
 AppRegistry.registerComponent('App', () => Count);

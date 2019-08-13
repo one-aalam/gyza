@@ -1,5 +1,6 @@
 import React from 'react';
-import styled from 'styled-components/native';
+import styled from 'styled-components';
+import { View, Text, Image } from 'react-native';
 import Colors from '../constants/Colors';
 import { TitleBar } from './Container';
 import { Heading, Subheading } from './StyledText';
@@ -33,7 +34,7 @@ export const Card: React.SFC<ICardProps> = props => {
   );
 }
 
-const Container = styled.View`
+const Container = styled(View)`
     background: white;
     width: 315px;
     height: 280px;
@@ -43,16 +44,16 @@ const Container = styled.View`
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 `;
 
-const Cover = styled.View`
+const Cover = styled(View)`
     width: 100%;
     height: 200px;
     border-top-left-radius: 14px;
     border-top-right-radius: 14px;
     overflow: hidden;
-    background: red;
+    background: yellow;
 `;
 
-const Avatar = styled.View`
+const Avatar = styled(View)`
     width: 44px;
     height: 44px;
     border-radius: 22px;
@@ -66,7 +67,7 @@ const Content = styled(TitleBar)`
     padding-left: 20px;
 `;
 
-const Image = styled.Image`
+const StyledImage = styled(Image)`
     width: 100%;
     height: 100%;
     position: absolute;

@@ -1,6 +1,6 @@
 import * as WebBrowser from 'expo-web-browser';
 import React from 'react';
-import { Ionicons } from '@expo/vector-icons';
+import Icon from 'react-native-vector-icons/Ionicons';
 import {
   ScrollView,
   SafeAreaView,
@@ -20,9 +20,9 @@ export const HomeScreen: React.SFC = () => {
       <SafeAreaView>
       <ScrollView style={{height: '100%'}}>
       <TitleBar>
-        <Heading>Hello,</Heading>
-        <Subheading>Aftabs</Subheading>
-        <Ionicons
+        <Heading>Hello</Heading>
+        <Subheading>Aftab</Subheading>
+        <Icon
           name={'ios-notifications'}
           size={26}
           style={{ position: 'absolute', top: 20, right: 20 }}
@@ -36,9 +36,9 @@ export const HomeScreen: React.SFC = () => {
           contentContainerStyle={styles.contentContainer}>
             <Card></Card>
             <Card></Card>
+            <Card></Card>
         </ScrollView>
         </ScrollView>
-
         </SafeAreaView>
     </Container>
   );

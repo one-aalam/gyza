@@ -15,7 +15,6 @@
   },
   "dependencies": {
     "@gyza/common": "^0.1.0",
-    "@expo/samples": "~3.0.3",
     "@expo/vector-icons": "^10.0.3",
     "@react-navigation/web": "^1.0.0-alpha.9",
     "expo": "^34.0.1",

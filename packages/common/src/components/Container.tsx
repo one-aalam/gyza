@@ -1,5 +1,6 @@
 import React from 'react';
-import styled from 'styled-components/native';
+import { View } from 'react-native';
+import styled from 'styled-components';
 import Colors from '../constants/Colors';
 
 export const Container: React.SFC = (props: any) => {
@@ -14,17 +15,17 @@ export const TitleBar: React.SFC = (props: any) => {
   );
 }
 
-const ContainerStyled = styled.View`
+const ContainerStyled = styled(View)`
   flex: 1;
   background: #f0f3f5;
 `;
 
-const StyledTitleBar =  styled.View`
+const StyledTitleBar =  styled(View)`
   width: 100%;
   padding: 20px;
 `;
 
-const InfoContainer = styled.View`
+const InfoContainer = styled(View)`
   position: absolute;
   bottom: 0;
   left: 0;

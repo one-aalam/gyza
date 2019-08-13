@@ -1,10 +1,12 @@
 import React, { useState, useEffect  } from 'react';
 import {
   Dimensions,
-  Animated
+  Animated,
+  View,
+  TouchableOpacity
 } from 'react-native';
-import styled from 'styled-components/native';
-import { Ionicons } from '@expo/vector-icons';
+import styled from 'styled-components';
+// import { Ionicons } from '@expo/vector-icons';
 
 import Colors from '../constants/Colors';
 
@@ -28,19 +30,19 @@ export const Menu: React.SFC = (props: any) => {
     <AnimatedContainer {...props} style={{top: top}}>
         <Cover/>
         <CloseWrapper onPress={toggleMenu} >
-                <Ionicons
+                {/* <Ionicons
                     name={'ios-close'}
                     size={26}
                     style={{ marginBottom: -3 }}
                     color={'black'}
-                />
+                /> */}
         </CloseWrapper>
         <Content/>
     </AnimatedContainer>
   );
 }
 
-const CloseWrapper = styled.TouchableOpacity`
+const CloseWrapper = styled(TouchableOpacity)`
     position: absolute;
     top: 120px;
     left: 50%;
@@ -57,7 +59,7 @@ const CloseWrapper = styled.TouchableOpacity`
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 `;
 
-const Container = styled.View`
+const Container = styled(View)`
     position: absolute;
     background: white;
     width: 100%;
@@ -66,12 +68,12 @@ const Container = styled.View`
 `;
 const AnimatedContainer = Animated.createAnimatedComponent(Container);
 
-const Cover = styled.View`
+const Cover = styled(View)`
     height: 142px;
     background: black;
 `;
 
-const Content = styled.View`
+const Content = styled(View)`
     height: ${screenHeight}px;
     background: #f0f3f5;
 `;

@@ -9,7 +9,8 @@
           "root": ["./"],
           "alias": {
             "^react-native$": "react-native-web"
-          }
+          },
+          "cwd": "packagejson"
         }
       ]
     ]

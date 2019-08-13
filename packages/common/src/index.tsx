@@ -4,12 +4,10 @@ import { Button, StyleSheet, Text, View } from "react-native";
 
 import { HomeScreen} from './screens/HomeScreen';
 import { Container } from './components/Container';
-import { Heading } from './components/Heading';
 
 export {
   HomeScreen,
   Container,
-  Heading
 };
 
 export const Counter: React.SFC = () => {
