@@ -18,7 +18,7 @@ Current Tooling Status
 
 ## Demo
 
-**If you like this project**, please give us ⭐ on GitHub — it helps!
+**If you like this project**, please give a ⭐ on GitHub — it helps!
 
 ## Development stack
 
