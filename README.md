@@ -1,5 +1,5 @@
 <div align="center">
-  <a href="http://margarita.kiwi.com"><img src="./docs/assets/logo.png" alt="Gyza" title="Gyza" width="200" /></a>
+  <a href=""><img src="./gyza.png" alt="Gyza" title="Gyza" width="200" /></a>
 </div>
 <h1 align="center">Gyza</h1>
 <p align="center"><em>aspires to be a </em></p>
