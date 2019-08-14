@@ -16,6 +16,28 @@ Current Tooling Status
 - [ ] `@gyza/web` CRA based SPA web admin/dasboard
 - [ ] `@gyza/ssr` NextJS 9 based consumer facing web app
 
+## Demo
+
+**If you like this project**, please give us ⭐ on GitHub — it helps!
+
+## Development stack
+
+This project follows the react-native-web philosophy of **Write Once, Render Anywhere**.
+
+- [React Native](https://facebook.github.io/react-native/)
+- [Expo](https://expo.io/)
+- [React Native Web](https://github.com/necolas/react-native-web)
+- [Next.js](https://nextjs.org/)
+
+## App features
+
+The app consists of following parts which should cover the whole searching and ordering flow:
+
+- Search for food/restaurants
+- Order
+- Manage Address
+- Payments
+
 
 Credits:
 - https://github.com/iamkevinwolf and structure of his https://github.com/iamkevinwolf/formal helped a lot with setting up the React Native/Expo side of the puzzle
