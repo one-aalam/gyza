@@ -2,6 +2,12 @@ import React from 'react';
 import { Text, View } from 'react-native';
 import styled from 'styled-components';
 
+
+interface ITextProps {
+  className?: string;
+  style?: string;
+}
+
 export const MonoText: React.SFC = (props: any) => {
   return (
     <Text {...props} style={[props.style, { fontFamily: 'space-mono' }]} />

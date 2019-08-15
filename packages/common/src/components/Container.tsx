@@ -17,12 +17,13 @@ export const TitleBar: React.SFC = (props: any) => {
 
 const ContainerStyled = styled(View)`
   flex: 1;
-  background: #f0f3f5;
+  background: #fff;
 `;
 
 const StyledTitleBar =  styled(View)`
   width: 100%;
-  padding: 20px;
+  padding: 15px;
+  background: whitesmoke;
 `;
 
 const InfoContainer = styled(View)`
