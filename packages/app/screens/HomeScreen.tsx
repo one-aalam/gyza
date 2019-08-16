@@ -5,9 +5,6 @@ import {
   ScrollView,
   SafeAreaView,
   StyleSheet,
-  Text,
-  Image,
-  View
 } from 'react-native';
 
 import { Heading,
@@ -15,63 +12,12 @@ import { Heading,
          Container,
          TitleBar,
          Menu,
-         Card,
          BrandCard,
          OfferCard,
-         RestaurantCard } from '@gyza/common';
+         RestaurantCard,
+         EmphasisView
+          } from '@gyza/common';
 
-interface IViewContainerProps {
-  children: ReactNode;
-  heading?: string;
-  subheading?: string;
-  bgColor?: string;
-  center?: boolean;
-  icon?: string;
-};
-
-export const ScrollViewContainer: React.SFC<IViewContainerProps> = ({
-  children,
-  heading,
-  subheading,
-  bgColor,
-  center,
-  icon
-}) => {
-  return (
-    <View style={{
-      backgroundColor: bgColor ? bgColor : null,
-      display: 'flex',
-      justifyContent: center ? 'center' : 'flex-start',
-      alignItems: center ? 'center' : null
-    }}>
-{   icon && <Icon name={icon} size={32} style={{
-          paddingTop: 20,
-          paddingLeft: 20
-        }}/>}
-    {  heading &&
-        <Text style={{
-          textTransform: 'uppercase',
-          paddingTop: 20,
-          paddingLeft: 20,
-          fontWeight: 'bold',
-          borderBottomColor: 'green',
-        }}>
-        {heading}
-        </Text>
-    }
-    {  subheading &&
-        <Text style={{
-          textTransform: 'uppercase',
-          paddingBottom: 20,
-          paddingLeft: 20
-        }}>
-        {subheading}
-        </Text>
-    }
-    {children}
-    </View>
-  );
-}
 
 export const HomeScreen: React.SFC = () => {
   return (
@@ -106,7 +52,7 @@ export const HomeScreen: React.SFC = () => {
               subheading={"From Nathu's sweets"}
             ></OfferCard>
         </ScrollView>
-        <ScrollViewContainer bgColor={'white'} heading={'919 RESTAURANTS'}>
+        <EmphasisView bgColor={'white'} heading={'919 RESTAURANTS'}>
           <ScrollView
             style={styles.container}
             showsVerticalScrollIndicator={false}
@@ -128,19 +74,12 @@ export const HomeScreen: React.SFC = () => {
               rating={4.2}
               costs={'300 per person'}
             />
-            <ScrollViewContainer bgColor={'whitesmoke'}
+            <EmphasisView bgColor={'whitesmoke'}
               heading={'in the spotlight'}
               subheading={'discover new tastes around you'}
               icon={'ios-star-outline'}
               center={true}
             >
-              {
-                // popular brands
-                // vegeterian options
-                // offers near you
-                // gyza exclusives
-                // pocket friendly
-              }
                 <ScrollView
                   style={styles.container}
                   horizontal={true}
@@ -167,9 +106,9 @@ export const HomeScreen: React.SFC = () => {
                       subheading={'45 mins'}
                     ></BrandCard>
                 </ScrollView>
-            </ScrollViewContainer>
+            </EmphasisView>
         </ScrollView>
-        </ScrollViewContainer>
+        </EmphasisView>
       </ScrollView>
       </SafeAreaView>
     </Container>
