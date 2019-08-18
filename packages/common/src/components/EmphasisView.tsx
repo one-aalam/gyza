@@ -24,10 +24,11 @@ export const EmphasisView: React.SFC<IEmphasisViewProps> = ({
     children,
     heading,
     subheading,
-    icon
+    icon,
+    ...stylingProps
   }) => {
     return (
-      <StyledView>
+      <StyledView {...stylingProps}>
   {   icon && <Icon name={icon} size={32} style={{
             paddingTop: 20,
             paddingLeft: 20

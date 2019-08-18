@@ -1,17 +1,32 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, SafeAreaView } from 'react-native';
 import styled from 'styled-components';
 import Colors from '../constants/Colors';
 
+interface IContainerProps {
+  bgColor?: string;
+}
+
 export const Container: React.SFC = (props: any) => {
   return (
-    <ContainerStyled {...props} style={[props.style]} />
+    <ContainerStyled {...props} />
+  );
+}
+export const Content: React.SFC = (props: any) => {
+  return (
+    <StyledContent {...props} />
   );
 }
 
-export const TitleBar: React.SFC = (props: any) => {
+export const Screen: React.SFC = (props: any) => {
   return (
-    <StyledTitleBar {...props} style={[props.style]} />
+    <ScreenStyled {...props} />
+  );
+}
+
+export const TitleBar: React.SFC<IContainerProps> = (props: IContainerProps) => {
+  return (
+    <StyledTitleBar {...props} />
   );
 }
 
@@ -20,11 +35,21 @@ const ContainerStyled = styled(View)`
   background: #fff;
 `;
 
-const StyledTitleBar =  styled(View)`
+const ScreenStyled = styled(SafeAreaView)`
+  flex: 1;
+  background: #fff;
+`;
+
+const StyledTitleBar =  styled(View)<IContainerProps>`
   width: 100%;
   padding: 15px;
-  background: whitesmoke;
+  background: ${props => props.bgColor ? props.bgColor : '#fff' };
 `;
+
+const StyledContent = styled(View)`
+  padding-top: 20px;
+  padding-bottom: 20px;
+`
 
 const InfoContainer = styled(View)`
   position: absolute;
