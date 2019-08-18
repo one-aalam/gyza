@@ -1,22 +1,22 @@
 import React from 'react';
 import { Platform } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
-// import { HomeScreen } from '@gyza/common';
 import { HomeScreen } from '../screens/HomeScreen';
+import { RestaurantScreen } from '../screens/RestaurantScreen';
 
 import TabBarIcon from '../components/TabBarIcon';
 
 const config = Platform.select({
   web: { headerMode: 'screen' },
-  default: {},
+  default: {
+    headerMode: 'none'
+  },
 });
 
-const HomeStack = createStackNavigator(
-  {
+const HomeStack = createStackNavigator({
     Home: HomeScreen,
-  },
-  config
-);
+    Info: RestaurantScreen
+  },config);
 
 HomeStack.navigationOptions = {
   tabBarLabel: 'HOME',
@@ -27,15 +27,11 @@ HomeStack.navigationOptions = {
     />
   ),
 };
-
 HomeStack.path = '';
 
-const SearchStack = createStackNavigator(
-  {
+const SearchStack = createStackNavigator({
     Search: HomeScreen,
-  },
-  config
-);
+  },config);
 
 SearchStack.navigationOptions = {
   tabBarLabel: 'SEARCH',
@@ -49,12 +45,9 @@ SearchStack.navigationOptions = {
 
 SearchStack.path = '';
 
-const CartStack = createStackNavigator(
-  {
+const CartStack = createStackNavigator({
     Cart: HomeScreen,
-  },
-  config
-);
+  }, config);
 
 CartStack.navigationOptions = {
   tabBarLabel: 'CART',
@@ -65,17 +58,14 @@ CartStack.navigationOptions = {
     />
   ),
 };
-
 CartStack.path = '';
 
-const AccountStack = createStackNavigator(
-  {
-    Account: HomeScreen,
-  },
-  config
-);
+const SettingsStack = createStackNavigator({
+    Profile: HomeScreen,
+    Settings: HomeScreen,
+  }, config);
 
-AccountStack.navigationOptions = {
+SettingsStack.navigationOptions = {
   tabBarLabel: 'ACCOUNT',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
@@ -84,15 +74,18 @@ AccountStack.navigationOptions = {
     />
   ),
 };
-
-AccountStack.path = '';
+SettingsStack.path = '';
 
 
 const tabNavigator = createBottomTabNavigator({
   HomeStack,
   SearchStack,
   CartStack,
-  AccountStack
+  SettingsStack
+}, {
+  navigationOptions: {
+    headerMode: false
+  }
 });
 
 tabNavigator.path = '';
