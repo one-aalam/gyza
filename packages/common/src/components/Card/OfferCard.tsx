@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { View, Image } from 'react-native';
+import { View, Image, TouchableOpacity, GestureResponderEvent } from 'react-native';
 import { TitleBar } from '../Container';
 import { Heading, Subheading } from '../StyledText';
 
@@ -10,10 +10,12 @@ interface ICardProps {
     subheading?: string;
     image?: any;
     allCover?: boolean;
+    onPress?: (evt: GestureResponderEvent) => void
 }
 
 export const OfferCard: React.SFC<ICardProps> = props => {
   return (
+    <TouchableOpacity onPress={props.onPress}>
     <Container>
         <Cover>
             { props.image && <Image source={props.image} resizeMode={'cover'} />}
@@ -23,6 +25,7 @@ export const OfferCard: React.SFC<ICardProps> = props => {
             </StyledTitleBar>
         </Cover>
     </Container>
+    </TouchableOpacity>
   );
 }
 

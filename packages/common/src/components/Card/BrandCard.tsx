@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, TouchableOpacity,GestureResponderEvent  } from 'react-native';
 
 interface ICardProps {
     className?: string;
@@ -8,11 +8,12 @@ interface ICardProps {
     subheading?: string;
     image?: any;
     allCover?: boolean;
+    onPress?: (evt: GestureResponderEvent) => void
 }
 
 export const BrandCard: React.SFC<ICardProps> = props => {
   return (
-    <BrandContainer>
+    <BrandContainer onPress={props.onPress}>
         <Container>
             <Cover>
                 { props.image && <StyledImage source={props.image} />}
@@ -32,7 +33,7 @@ const StyledImage = styled(Image)`
     height: null;
 `;
 
-const BrandContainer = styled(View)`
+const BrandContainer = styled(TouchableOpacity)`
     width: 120px;
     display: flex;
     justify-content: center;

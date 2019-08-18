@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { View, Text, Image, Platform } from 'react-native';
+import { View, Text, Image, Platform, TouchableOpacity, GestureResponderEvent } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import FAIcon from 'react-native-vector-icons/FontAwesome';
 
@@ -14,10 +14,12 @@ interface IRestaurantCardProps {
     image?: any;
     offer?: string;
     allCover?: boolean;
+    onPress?: (evt: GestureResponderEvent) => void
 }
 
 export const RestaurantCard: React.SFC<IRestaurantCardProps> = props => {
     return (
+      <TouchableOpacity onPress={props.onPress}>
       <ContainerWrapper>
         <SpecialTag>
           <SpecialTagText>EXCLUSIVE</SpecialTagText>
@@ -49,6 +51,7 @@ export const RestaurantCard: React.SFC<IRestaurantCardProps> = props => {
             </Meta>
         </View>
       </ContainerWrapper>
+      </TouchableOpacity>
     );
   }
 
