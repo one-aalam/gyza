@@ -1,117 +1,117 @@
 import * as WebBrowser from 'expo-web-browser';
-import React, { ReactNode } from 'react';
+import React from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {
   ScrollView,
-  SafeAreaView,
   StyleSheet,
+  View
 } from 'react-native';
 
-import { Heading,
+import {
+        Screen,
+          Heading,
          Subheading,
-         Container,
          TitleBar,
          Menu,
          BrandCard,
          OfferCard,
          RestaurantCard,
-         EmphasisView
+         EmphasisView,
+
+         random,
+         IRestaurant,
+         RESTAURANT_DATA
           } from '@gyza/common';
 
+export const HomeScreen = ({ navigation }) => {
 
-export const HomeScreen: React.SFC = () => {
+  const onPress = (r: {restaurant: IRestaurant}) => {
+    navigation.navigate('Info', r)
+  }
+  const insertEmphasisAt = 2;
+  const getCuisineImage = () => `../assets/images/items/cuisine-${random(0, 7)}.jpg`;
+
   return (
-    <Container>
-      {/* <Menu/> */}
-      <SafeAreaView>
+    <Screen>
       <ScrollView style={{height: '100%'}} showsVerticalScrollIndicator={false}>
         <TitleBar>
-          <Heading>Hello, Aftab</Heading>
-          {/* <Subheading>Aftab</Subheading> */}
-          <Subheading>What are you havin' today?</Subheading>
+          <Heading>DELIVERING</Heading>
+          <Subheading>NOW &rarr; HOME</Subheading>
           <Icon
             name={'ios-notifications'}
             size={26}
             style={{ position: 'absolute', top: 20, right: 20 }}
             color={'#4775f2'}
+            onPress={() => {}}
           />
         </TitleBar>
         <ScrollView
-          style={styles.container}
+          style={{flex: 1}}
           horizontal={true}
           showsHorizontalScrollIndicator={false}
           contentContainerStyle={styles.contentContainer}>
-            <OfferCard
-              image={require('../assets/images/xrttsx1487339558.jpg')}
-              heading={"Enjoy 50% off"}
-              subheading={"From Nathu's sweets"}
-            ></OfferCard>
-            <OfferCard
-              image={require('../assets/images/xrttsx1487339558.jpg')}
-              heading={"Enjoy 50% off"}
-              subheading={"From Nathu's sweets"}
-            ></OfferCard>
+            {
+              RESTAURANT_DATA.slice(0, 5).map(restaurant => <OfferCard
+                key={restaurant.id}
+                image={require('../assets/images/items/cuisine-4.jpg')}
+                heading={"Enjoy 50% off"}
+                subheading={`from ${restaurant.name}`}
+                onPress={() => onPress({restaurant})}
+              />)
+            }
         </ScrollView>
         <EmphasisView bgColor={'white'} heading={'919 RESTAURANTS'}>
           <ScrollView
-            style={styles.container}
+            style={{flex: 1}}
             showsVerticalScrollIndicator={false}
             contentContainerStyle={styles.contentContainer}>
-            <RestaurantCard
-              image={require('../assets/images/xrttsx1487339558.jpg')}
-              name={'Refections'}
-              dealsIn={'Juices, Bevarages, Salads'}
-              deliversIn={'40 mins'}
-              rating={2.4}
-              offer={'40% off with coupon GYZA40'}
-              costs={'400 per person'}
-            />
-            <RestaurantCard
-              image={require('../assets/images/xrttsx1487339558.jpg')}
-              name={'FreshMenu'}
-              dealsIn={'Chinese, Continental, Italian, Mediterranean, ...'}
-              deliversIn={'30 mins'}
-              rating={4.2}
-              costs={'300 per person'}
-            />
-            <EmphasisView bgColor={'whitesmoke'}
-              heading={'in the spotlight'}
-              subheading={'discover new tastes around you'}
-              icon={'ios-star-outline'}
-              center={true}
-            >
-                <ScrollView
-                  style={styles.container}
-                  horizontal={true}
-                  showsHorizontalScrollIndicator={false}
-                  contentContainerStyle={styles.contentContainer}>
-                    <BrandCard
-                      image={require('../assets/images/xrttsx1487339558.jpg')}
-                      heading={'domino\'s pizza'}
-                      subheading={'30 mins'}
-                    ></BrandCard>
-                    <BrandCard
-                      image={require('../assets/images/xrttsx1487339558.jpg')}
-                      heading={'pizza hut'}
-                      subheading={'45 mins'}
-                    ></BrandCard>
-                    <BrandCard
-                      image={require('../assets/images/xrttsx1487339558.jpg')}
-                      heading={'domino\'s pizza'}
-                      subheading={'30 mins'}
-                    ></BrandCard>
-                    <BrandCard
-                      image={require('../assets/images/xrttsx1487339558.jpg')}
-                      heading={'pizza hut'}
-                      subheading={'45 mins'}
-                    ></BrandCard>
-                </ScrollView>
-            </EmphasisView>
+            {
+              RESTAURANT_DATA.slice(0, 10).map((restaurant, index) =>
+
+              <View key={restaurant.id}><RestaurantCard
+                key={restaurant.id}
+                image={require('../assets/images/items/cuisine-1.jpg')}
+                name={restaurant.name}
+                dealsIn={restaurant.dealsIn.join(',')}
+                deliversIn={'40 mins'}
+                rating={2.4}
+                offer={'40% off with coupon GYZA40'}
+                costs={'400 per person'}
+                onPress={() => onPress({restaurant})}
+              />
+              {
+                index === insertEmphasisAt &&
+                <EmphasisView bgColor={'whitesmoke'}
+                heading={'in the spotlight'}
+                subheading={'discover new tastes around you'}
+                icon={'ios-star-outline'}
+                center={true}
+              >
+                  <ScrollView
+                    style={{flex: 1}}
+                    horizontal={true}
+                    showsHorizontalScrollIndicator={false}
+                    contentContainerStyle={styles.contentContainer}>
+                      {
+                        RESTAURANT_DATA.slice(0, 6).map((restaurant, index) =>
+                        <BrandCard
+                        key={restaurant.id}
+                        image={require('../assets/images/items/cuisine-6.jpg')}
+                        heading={restaurant.name}
+                        subheading={'30 mins'}
+                        onPress={() => onPress({restaurant})}
+                        />
+                        )
+                      }
+                  </ScrollView>
+              </EmphasisView>
+              }
+              </View>)
+            }
         </ScrollView>
         </EmphasisView>
       </ScrollView>
-      </SafeAreaView>
-    </Container>
+    </Screen>
   );
 }
 
@@ -128,18 +128,8 @@ function handlePress() {
 
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1
-  },
   contentContainer: {
     paddingTop: 20,
     paddingBottom: 20
-  },
-  welcomeImage: {
-    width: 100,
-    height: 80,
-    resizeMode: 'contain',
-    marginTop: 3,
-    marginLeft: -10,
   }
 });
