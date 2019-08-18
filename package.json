@@ -12,7 +12,7 @@
         "app": "yarn workspace @gyza/app start",
         "ios": "yarn workspace @gyza/app run-ios",
         "android": "yarn workspace @gyza/app run-android",
-        "start": "concurrently --kill-others-on-fail 'yarn common'  'yarn web'"
+        "devapp": "concurrently --kill-others-on-fail 'yarn common'  'yarn app'"
     },
     "dependencies": {
         "concurrently": "^4.1.1"
